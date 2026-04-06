@@ -48,7 +48,7 @@ THREAT INTELLIGENCE REPORT
 
 ---
 
-#### **1. Source IP: 172.16.0.8**
+#### **1. Source IP: 198.51.100.23**
 * **Likely Attack Type:** **SSH Brute Force Attack.** The high volume of failed logins (45) on port 22 is a signature of automated credential stuffing or password guessing.
 * **Severity:** **High**
 * **Recommended Remediation:**
@@ -57,7 +57,7 @@ THREAT INTELLIGENCE REPORT
     3.  Force a password reset for any accounts targeted during this window.
     4.  Ensure SSH is restricted to VPN-only access and implement Key-Based Authentication.
 
-#### **2. Source IP: 10.0.0.5**
+#### **2. Source IP: 203.0.113.88**
 * **Likely Attack Type:** **Potential Data Exfiltration / Unauthorized Data Transfer.** While no failed logins occurred, the byte count (5MB) is a significant outlier compared to baseline traffic on port 443. This may indicate a staged file upload or data "beaconing."
 * **Severity:** **Medium**
 * **Recommended Remediation:**
@@ -65,7 +65,7 @@ THREAT INTELLIGENCE REPORT
     2.  Perform a host-level forensic scan to identify the process initiating the connection.
     3.  Review NetFlow logs for this host over the last 24 hours to check for recurring patterns of large transfers.
 
-#### **3. Source IPs: 192.168.1.91, 192.168.1.44, 192.168.1.87**
+#### **3. Source IPs: 192.0.2.15, 192.0.2.144, 192.0.2.210**
 * **Likely Attack Type:** **Likely False Positive / Minor User Error.** A single failed login on port 443 (HTTPS) with low data volume is consistent with a user mistyping a password on a web application.
 * **Severity:** **Low**
 * **Recommended Remediation:**
@@ -74,4 +74,4 @@ THREAT INTELLIGENCE REPORT
     3.  Tune the ML model to ignore single-instance login failures to reduce alert fatigue.
 
 ---
-**Analyst Note:** The activity from `172.16.0.8` is the priority. The host at `10.0.0.5` should be investigated immediately after the SSH threat is neutralized to ensure a data breach is not in progress.```
+**Analyst Note:** The activity from `198.51.100.23` is the priority. The host at `203.0.113.88` should be investigated immediately after the SSH threat is neutralized to ensure a data breach is not in progress.```
